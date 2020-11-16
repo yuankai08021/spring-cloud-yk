@@ -1,0 +1,43 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: vehicle-provider-loan
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://192.168.10.179:3306/dw?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.yongda.entities
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+ribbon:
+  ReadTimeout: 5000  # 设置5秒，默认1秒
+  ConnectTimeout: 5000
+
+eureka:
+  client:
+    # true表示向注册中心注册自己
+    register-with-eureka: true
+    # 是否从eureka server抓取已有的注册信息，默认为true。集群必须设置为true才能配合ribbon使用负载均衡
+    fetch-registry: true
+    #表示eureka client间隔多久去拉取服务器注册信息,默认为30秒
+    registry-fetch-interval-seconds: 60
+    healthcheck:
+      enabled: true
+    service-url:
+      #      defaultZone: http://localhost:7001/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: loan8002
+    prefer-ip-address: true
+    #eureka客户端需要多长时间发送心跳给eureka服务器，表明他仍然活着，默认30秒
+    lease-renewal-interval-in-seconds: 60
+    #eureka服务器在接受到实例的最后一次发出的心跳后，需要等待多久才可以将此实例删除
+    lease-expiration-duration-in-seconds: 120

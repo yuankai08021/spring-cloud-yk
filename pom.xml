@@ -4,22 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.yk.springcloud</groupId>
-    <artifactId>springcloud</artifactId>
+    <groupId>com.yongda</groupId>
+    <artifactId>vehicle</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>cloud-provider-payment8001</module>
-        <module>cloud-consumer-order80</module>
-        <module>cloud-api-commons</module>
-        <module>cloud-eureka-server7001</module>
-        <module>cloud-eureka-server7002</module>
-        <module>cloud-provider-payment8002</module>
-        <module>cloud-consumer-feign-order80</module>
-        <module>cloud-provider-hystrix-payment8001</module>
-        <module>cloud-consumer-feign-hystrix-order80</module>
-        <module>cloud-consumer-hystrix-dashboard9001</module>
-        <module>cloud-gateway-gateway9527</module>
-        <module>cloud-config-center3344</module>
+        <module>vehicle-eureka-server7001</module>
+        <module>vehicle-eureka-server7002</module>
+        <module>vehicle-api-commons</module>
+        <module>vehicle-consumer8080</module>
+        <module>vehicle-provider-order8001</module>
+        <module>vehicle-provider-loan8002</module>
+        <module>vehicle-provider-auth8003</module>
+        <module>vehicle-provider-vehicle8004</module>
+        <module>vehicle-provider-finance8005</module>
+        <module>vehicle-provider-warehouse8006</module>
+        <module>vehicle-provider-report8007</module>
+        <module>vehicle-provider-finance8005</module>
+        <module>vehicle-provider-finance8005</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -114,6 +115,22 @@
                 <configuration>
                     <fork>true</fork>
                     <addResources>true</addResources>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.2.0</version>
+                <configuration>
+                    <imageName></imageName>
+                    <dockerDirectory>src/main/resources</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
                 </configuration>
             </plugin>
         </plugins>

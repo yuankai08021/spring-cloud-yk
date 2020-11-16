@@ -7,23 +7,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-eureka-server7002" />
-        <module name="cloud-api-commons" />
-        <module name="cloud-eureka-server7001" />
-        <module name="cloud-consumer-order80" />
-        <module name="cloud-provider-payment8002" />
-        <module name="cloud-provider-payment8001" />
-        <module name="cloud-gateway-gateway9527" />
-        <module name="cloud-consumer-feign-hystrix-order80" />
-        <module name="cloud-consumer-feign-order80" />
-        <module name="cloud-provider-hystrix-payment8001" />
+        <module name="cloud-config-center3355" />
         <module name="cloud-config-center3344" />
+        <module name="vehicle-eureka-server7002" />
+        <module name="vehicle-eureka-server7001" />
+        <module name="vehicle-provider-warehouse8006" />
+        <module name="vehicle-provider-auth8003" />
+        <module name="cloud-consumer-feign-hystrix-order80" />
+        <module name="vehicle-api-commons" />
+        <module name="vehicle-provider-loan8002" />
+        <module name="vehicle-provider-finance8005" />
+        <module name="vehicle-consumer8080" />
+        <module name="vehicle-provider-vehicle8004" />
         <module name="cloud-consumer-hystrix-dashboard9002" />
+        <module name="vehicle-provider-report8007" />
+        <module name="cloud-consumer-order80" />
+        <module name="cloud-provider-hystrix-payment8001" />
+        <module name="vehicle-provider-order8001" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cloud-consumer-hystrix-dashboard9002" target="1.8" />
-      <module name="springcloud" target="1.8" />
+      <module name="cloud-consumer-hystrix-dashboard9001" target="1.8" />
+      <module name="cloud-gateway-gateway9527" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

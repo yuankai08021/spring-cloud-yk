@@ -1,0 +1,6 @@
+com\yongda\controller\AuthConsumerController.class
+com\yongda\config\FeignConfig.class
+com\yongda\controller\OrderConsumerController.class
+com\yongda\service\AuthConsumerService.class
+com\yongda\ConsumerMain8080.class
+com\yongda\service\OrderConsumerService.class

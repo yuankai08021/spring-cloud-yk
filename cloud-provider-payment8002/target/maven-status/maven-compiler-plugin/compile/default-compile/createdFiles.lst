@@ -1,5 +1,0 @@
-com\yk\springcloud\service\PaymentService.class
-com\yk\springcloud\PaymentMain8002.class
-com\yk\springcloud\dao\PaymentDao.class
-com\yk\springcloud\service\impl\PaymentServiceImpl.class
-com\yk\springcloud\controller\PaymentController.class
